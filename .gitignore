@@ -1,2 +1,5 @@
 .env
 .tmp/
+credentials.json
+token.json
+.venv/
