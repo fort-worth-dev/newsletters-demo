@@ -14,6 +14,7 @@ PERPLEXITY_API_KEY=pplx-...
 ANTHROPIC_API_KEY=sk-ant-...
 RESEND_API_KEY=re_...
 RESEND_FROM=Newsletter <you@yourdomain.com>   # optional, defaults to Resend sandbox
+SHEETS_ARCHIVE_ID=                            # Google Sheets spreadsheet ID for archiving
 ```
 
 ---
@@ -68,6 +69,24 @@ python tools/05_send_email.py \
 - Sends via Resend API
 - Subject auto-derived from filename if `--subject` not provided
 - Prints Resend message ID to stdout
+
+### Step 6 — Archive to Sheets
+```bash
+python tools/06_archive_to_sheets.py \
+  --html-file .tmp/newsletter_ai_agents_in_enterprise_software_20250515.html \
+  --spreadsheet-id YOUR_SPREADSHEET_ID
+```
+- Appends one row to the `Archive` tab: `Date | Slug | Headline | File Path | Size (KB) | Archived At`
+- Ensures the first row matches the expected header; if the existing header row does not exactly match, the script rewrites it
+- The target sheet/tab must already exist; the script does not create a missing tab automatically
+- Spreadsheet ID comes from `--spreadsheet-id` or `SHEETS_ARCHIVE_ID` in `.env`
+- **First run**: triggers a browser OAuth flow to authorize Google Sheets access; saves `token.json` for subsequent runs
+- `--sheet-name` selects the existing tab name to use (default: `Archive`)
+
+**One-time Google Cloud setup (required before first run):**
+1. Go to [Google Cloud Console](https://console.cloud.google.com) → APIs & Services → Enable the **Google Sheets API**
+2. Create OAuth 2.0 credentials (Desktop app) → Download as `credentials.json` in the project root
+3. Add your Google account as a test user under OAuth consent screen while the app is in "Testing" mode
 
 ---
 
