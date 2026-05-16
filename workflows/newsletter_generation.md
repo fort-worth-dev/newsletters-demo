@@ -77,10 +77,11 @@ python tools/06_archive_to_sheets.py \
   --spreadsheet-id YOUR_SPREADSHEET_ID
 ```
 - Appends one row to the `Archive` tab: `Date | Slug | Headline | File Path | Size (KB) | Archived At`
-- Creates the header row on first run if the tab is empty
+- Ensures the first row matches the expected header; if the existing header row does not exactly match, the script rewrites it
+- The target sheet/tab must already exist; the script does not create a missing tab automatically
 - Spreadsheet ID comes from `--spreadsheet-id` or `SHEETS_ARCHIVE_ID` in `.env`
 - **First run**: triggers a browser OAuth flow to authorize Google Sheets access; saves `token.json` for subsequent runs
-- `--sheet-name` overrides the tab name (default: `Archive`)
+- `--sheet-name` selects the existing tab name to use (default: `Archive`)
 
 **One-time Google Cloud setup (required before first run):**
 1. Go to [Google Cloud Console](https://console.cloud.google.com) → APIs & Services → Enable the **Google Sheets API**
