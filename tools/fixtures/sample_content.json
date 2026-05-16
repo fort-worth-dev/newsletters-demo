@@ -1,0 +1,32 @@
+{
+  "topic": "AI Agents in Enterprise Software",
+  "slug": "ai_agents_in_enterprise_software",
+  "headline": "AI Agents Are Rewriting the Enterprise Playbook",
+  "subheadline": "From task automation to autonomous decision-making, agentic AI is moving from pilot to production across Fortune 500 companies.",
+  "sections": [
+    {
+      "title": "The Shift from Copilots to Agents",
+      "body": "Enterprise AI has crossed a threshold. Where 2023 was defined by chatbots and coding assistants — tools that respond to prompts — 2025 is defined by agents: systems that set their own sub-goals, call external tools, and complete multi-step tasks with minimal human intervention.\n\nGartner estimates that by 2028, 33% of enterprise software applications will include agentic AI capabilities, up from less than 1% in 2024. This isn't a gradual shift — it's a step function. Companies that treat this as an incremental upgrade to their automation stack will find themselves two years behind competitors who are rebuilding workflows from the ground up.\n\nThe practical consequence is visible in how work gets structured. Teams are increasingly acting as orchestrators — defining objectives and reviewing outputs — rather than executing individual steps. The agent handles the middle.",
+      "stat_callout": "33% of enterprise apps will include agentic AI by 2028, up from <1% today (Gartner)"
+    },
+    {
+      "title": "Where Agents Are Winning Right Now",
+      "body": "Three domains are seeing outsized early adoption: customer service, software development, and financial operations. In customer service, agentic systems handle full resolution workflows — not just routing tickets but querying order systems, drafting responses, and closing cases — reducing average handle time by 40-60% in early deployments.\n\nIn software development, agents are moving beyond code completion into pull request review, test generation, and incident triage. GitHub data shows that developers using agent-assisted workflows ship features 55% faster, with bug rates unchanged — suggesting the productivity gains aren't coming at a quality cost.\n\nFinancial operations present the most complex case. Agents are being used for accounts payable matching, anomaly detection, and regulatory report drafting. The pattern is consistent: agents excel at high-volume, rule-bound tasks where the decision space is bounded and errors are recoverable.",
+      "stat_callout": "Developers using agent-assisted workflows ship features 55% faster (GitHub internal data)"
+    },
+    {
+      "title": "The Integration and Trust Problem",
+      "body": "The limiting factor for enterprise agent adoption isn't capability — it's trust and integration. Most enterprise data lives in systems designed for human operators: ERPs, CRMs, and legacy databases with inconsistent schemas, poor API coverage, and no concept of machine-readable permissions.\n\nBuilding agents that can reliably act on these systems requires two things most organizations haven't built yet: a tool layer (a library of well-tested, idempotent functions the agent can call) and a guardrail layer (policies that define what the agent can and cannot do without human approval). Companies that invest in these infrastructure layers first will deploy agents that work. Companies that skip to the model will deploy agents that hallucinate actions.\n\nThe organizational change is equally significant. Agent deployment requires cross-functional ownership — IT for integrations, legal for liability, operations for workflow redesign. The companies moving fastest have a dedicated AI operations function that owns this coordination.",
+      "stat_callout": null
+    }
+  ],
+  "key_insight": "The enterprises winning with AI agents aren't deploying better models — they're building better tool layers and clearer human-in-the-loop policies that let agents operate confidently within defined boundaries.",
+  "key_stats": [
+    {"label": "Enterprise apps with agentic AI by 2028", "value": 33, "unit": "%"},
+    {"label": "Reduction in customer service handle time", "value": 55, "unit": "%"},
+    {"label": "Faster feature delivery with agent-assisted dev", "value": 55, "unit": "%"},
+    {"label": "YoY growth in enterprise AI agent budgets", "value": 312, "unit": "%"},
+    {"label": "Fortune 500 firms with active agent pilots", "value": 78, "unit": "%"}
+  ],
+  "cta": "Forward this to the person on your team who keeps asking 'when should we start with agents?' — the answer is: now, but start with the tool layer, not the model."
+}

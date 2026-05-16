@@ -1,0 +1,45 @@
+{
+  "headline": "Agentic AI Moves From Theory to Enterprise Workflow \u2014 Here's What's Actually Happening",
+  "subheadline": "Major cloud vendors and enterprise software leaders are shipping autonomous AI systems that perceive, reason, plan, and act across business processes with minimal human intervention.",
+  "sections": [
+    {
+      "title": "What Agentic AI Actually Is (and Why It Matters Now)",
+      "body": "Agentic AI represents a fundamental shift from static AI responses to continuous autonomous decision-making. Unlike traditional AI systems that respond to individual prompts, agentic systems perceive their environment, interpret goals, reason about next steps, and execute actions across applications and APIs\u2014then adapt based on feedback. The architecture combines perception layers (ingesting data and signals), reasoning engines (typically powered by large language models), planning and memory components, tool integration, and feedback loops into a closed sense\u2013think\u2013act cycle.\n\nThis matters because agentic systems can handle variable, multistep, and partially unstructured processes that conventional automation cannot touch. Where robotic process automation excels at rigid, rule-based workflows, agentic AI navigates ambiguity, integrates across multiple systems, and refines its approach as conditions change. Google Cloud, AWS, IBM, ServiceNow, UiPath, and other major vendors now formally define and ship agentic AI capabilities\u2014signaling that this is no longer a research prototype but a commercial product category.",
+      "stat_callout": "6 major enterprise vendors now publish formal definitions and implementations of agentic AI systems."
+    },
+    {
+      "title": "Where Agentic AI Is Winning: From Legacy Modernization to Threat Response",
+      "body": "Early commercial traction is strongest in domains with high process complexity and rich digital signals: IT service management, customer support, cybersecurity, and application modernization. In IT and customer service, agentic agents triage tickets, resolve issues end-to-end by interacting with backend systems (password resets, provisioning, configuration), and proactively remediate problems before users notice. In cybersecurity, agents continuously monitor network traffic and behavioral data, autonomously isolating compromised endpoints and blocking malicious IPs in real time, then refine detection logic as attack patterns evolve.\n\nApplication modernization is emerging as a particularly high-impact use case. Agentic systems trained on legacy codebases like COBOL and .NET can automatically analyze architectures, propose refactorings, and orchestrate migrations to modern platforms\u2014reducing what once took months to a matter of minutes in some scenarios. In financial services, vendors describe coordinated ensembles of specialized agents (compliance, fraud detection, portfolio optimization) working together to handle complex workflows that would otherwise require multiple human handoffs.",
+      "stat_callout": "Application modernization timelines for complex legacy systems can be reduced by approximately 90 percent when agentic AI orchestrates decomposition and migration."
+    },
+    {
+      "title": "The Governance Challenge: Scaling Autonomy Responsibly",
+      "body": "As agentic AI systems take on more consequential decisions\u2014from approving system changes to blocking security threats to provisioning infrastructure\u2014enterprises face new governance, safety, and accountability questions. Autonomous agents operating on production systems must be designed with clear guardrails, continuous monitoring, and human-in-the-loop patterns that align their behavior with business objectives and risk tolerance. Organizations cannot simply deploy a specialized agent and trust it will act correctly; they must define decision boundaries, track agent reasoning and actions, and maintain the ability to pause or override agent behavior if it deviates from expectations.\n\nThis architectural challenge is why enterprise software vendors emphasize orchestration layers and ensemble designs: multiple specialized agents, each narrow in scope and coordinated by a central reasoning system, reduce the risk that any single agent will make an unchecked high-impact decision. As adoption accelerates, mature agentic AI practices will likely include audit trails, explainability mechanisms, and staged rollout protocols that allow teams to observe agent behavior in lower-risk scenarios before granting broader autonomy.",
+      "stat_callout": null
+    }
+  ],
+  "key_insight": "Agentic AI is transitioning from research to commercial deployment, with major cloud and enterprise vendors shipping autonomous systems that can reason, plan, and act across business processes. The next wave of enterprise AI value will come not from isolated AI features but from coordinated multi-agent systems that handle complex, variable workflows\u2014and the organizations that win will be those that combine technical capability with robust governance and monitoring.",
+  "key_stats": [
+    {
+      "label": "Estimated reduction in application modernization timelines",
+      "value": 90,
+      "unit": "percent"
+    },
+    {
+      "label": "Core functional stages in an agentic AI loop",
+      "value": 5,
+      "unit": "stages"
+    },
+    {
+      "label": "Major vendors formally shipping agentic AI products",
+      "value": 6,
+      "unit": "vendors"
+    },
+    {
+      "label": "Specialized agents in a typical financial services orchestration scenario",
+      "value": 3,
+      "unit": "agents"
+    }
+  ],
+  "cta": "Start mapping your highest-complexity, highest-signal-density processes\u2014IT support, security operations, customer service\u2014as early candidates for agentic AI pilots. Define decision guardrails and monitoring before deployment, and evaluate vendors on orchestration architecture and governance maturity, not just agent capability."
+}

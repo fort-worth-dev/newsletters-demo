@@ -1,0 +1,18 @@
+[
+  {
+    "timestamp": "2026-05-16T14:17:04.960275",
+    "stage": "01_research",
+    "model": "sonar-pro",
+    "input_tokens": 130,
+    "output_tokens": 1073,
+    "cost_usd": 0.016485
+  },
+  {
+    "timestamp": "2026-05-16T14:17:20.393568",
+    "stage": "02_structure_content",
+    "model": "claude-haiku-4-5-20251001",
+    "input_tokens": 1544,
+    "output_tokens": 1262,
+    "cost_usd": 0.006283
+  }
+]
