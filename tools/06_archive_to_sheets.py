@@ -70,23 +70,43 @@ def _ensure_header(service, spreadsheet_id: str, sheet_name: str) -> None:
         log("Header row written.", style="dim")
 
 
+def _parse_archive_metadata(html_file: Path) -> tuple[str, str]:
+    """Parse newsletter date and slug from a filename safely."""
+    stem = html_file.stem
+    parts = stem.split("_")
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    if len(parts) < 3 or parts[0] != "newsletter":
+        log_warning(
+            f"Filename '{stem}' does not match expected pattern "
+            "'newsletter_{{slug}}_{{YYYYMMDD}}'; using filename stem as slug and today as date."
+        )
+        return today, stem
+
+    slug = "_".join(parts[1:-1]).strip("_")
+    if not slug:
+        log_warning(
+            f"Filename '{stem}' does not contain a valid slug; "
+            "using filename stem as slug and today as date."
+        )
+        return today, stem
+
+    date_part = parts[-1]
+    try:
+        newsletter_date = datetime.strptime(date_part, "%Y%m%d").strftime("%Y-%m-%d")
+    except ValueError:
+        newsletter_date = today
+        log_warning(f"Could not parse date from filename '{stem}', using today.")
+
+    return newsletter_date, slug
+
+
 def archive(html_file: Path, spreadsheet_id: str, sheet_name: str = "Archive") -> str:
     if not html_file.exists():
         log_error(f"HTML file not found: {html_file}")
         sys.exit(1)
 
-    # Parse metadata from filename: newsletter_{slug}_{YYYYMMDD}.html
-    stem = html_file.stem
-    parts = stem.split("_")
-    # parts[0] = "newsletter", parts[-1] = date, everything between is slug
-    date_part = parts[-1]  # YYYYMMDD
-    slug = "_".join(parts[1:-1])
-
-    try:
-        newsletter_date = datetime.strptime(date_part, "%Y%m%d").strftime("%Y-%m-%d")
-    except ValueError:
-        newsletter_date = datetime.now().strftime("%Y-%m-%d")
-        log_warning(f"Could not parse date from filename '{stem}', using today.")
+    newsletter_date, slug = _parse_archive_metadata(html_file)
 
     size_kb = round(html_file.stat().st_size / 1024, 1)
     archived_at = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
